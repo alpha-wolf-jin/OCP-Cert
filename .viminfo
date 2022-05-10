@@ -12,7 +12,7 @@
 ~H
 # Command Line History (newest to oldest):
 :wq
-|2,0,1652190634,,"wq"
+|2,0,1652190837,,"wq"
 :w
 |2,0,1652190549,,"w"
 
@@ -25,6 +25,9 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
+"0	LINE	0
+	- *.apps.ocp4.example.com
+|3,0,0,1,1,0,1652190809,"- *.apps.ocp4.example.com"
 "1	LINE	0
 	    https://console-openshift-console.apps.ocp4.example.com.
 |3,0,1,1,1,0,1652190193,"    https://console-openshift-console.apps.ocp4.example.com."
@@ -53,44 +56,62 @@
 	        Issuer: C = US, ST = NC, L = Raleigh, O = "Red Hat, Inc.", OU = Training, CN = GLS Training Classroom Certificate Authority
 |3,0,9,1,1,0,1652188329,"        Issuer: C = US, ST = NC, L = Raleigh, O = \"Red Hat, Inc.\", OU = Training, CN = GLS Training Classroom Certificate Authority"
 ""-	CHAR	0
-	.
-|3,1,36,0,1,0,1652190202,"."
+	s
+|3,1,36,0,1,0,1652190832,"s"
 
 # File marks:
-'0  159  0  ~/README.md
-|4,48,159,0,1652190634,"~/README.md"
-'1  10  26  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
-|4,49,10,26,1652189756,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
-'2  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
-|4,50,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
-'3  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
-|4,51,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
-'4  24  0  ~/README.md
-|4,52,24,0,1652187894,"~/README.md"
-'5  24  0  ~/README.md
-|4,53,24,0,1652187894,"~/README.md"
-'6  12  0  ~/README.md
-|4,54,12,0,1652187742,"~/README.md"
-'7  12  0  ~/README.md
-|4,55,12,0,1652187742,"~/README.md"
-'8  12  0  ~/README.md
-|4,56,12,0,1652187742,"~/README.md"
-'9  12  0  ~/README.md
-|4,57,12,0,1652187742,"~/README.md"
+'0  76  4  ~/README.md
+|4,48,76,4,1652190837,"~/README.md"
+'1  165  0  ~/README.md
+|4,49,165,0,1652190634,"~/README.md"
+'2  159  0  ~/README.md
+|4,50,159,0,1652190634,"~/README.md"
+'3  10  26  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
+|4,51,10,26,1652189756,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
+'4  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,52,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+'5  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,53,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+'6  24  0  ~/README.md
+|4,54,24,0,1652187894,"~/README.md"
+'7  24  0  ~/README.md
+|4,55,24,0,1652187894,"~/README.md"
+'8  24  0  ~/README.md
+|4,56,24,0,1652187894,"~/README.md"
+'9  24  0  ~/README.md
+|4,57,24,0,1652187894,"~/README.md"
 
 # Jumplist (newest first):
+-'  76  4  ~/README.md
+|4,39,76,4,1652190837,"~/README.md"
+-'  165  0  ~/README.md
+|4,39,165,0,1652190695,"~/README.md"
 -'  159  0  ~/README.md
 |4,39,159,0,1652190634,"~/README.md"
+-'  136  82  ~/README.md
+|4,39,136,82,1652190148,"~/README.md"
 -'  130  82  ~/README.md
 |4,39,130,82,1652190148,"~/README.md"
 -'  10  26  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
 |4,39,10,26,1652189756,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
+-'  10  26  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
+|4,39,10,26,1652189756,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
+|4,39,1,0,1652189692,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
 -'  1  0  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
 |4,39,1,0,1652189692,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
 -'  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
 |4,39,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
 -'  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
 |4,39,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+-'  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,39,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+-'  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,39,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,39,1,0,1652189258,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,39,1,0,1652189258,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
 -'  1  0  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
 |4,39,1,0,1652189258,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
 -'  1  0  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
@@ -103,6 +124,14 @@
 |4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
 -'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
 |4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
 -'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
 |4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
 -'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
@@ -111,6 +140,16 @@
 |4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
 -'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
 |4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187936,"~/README.md"
 -'  24  0  ~/README.md
 |4,39,24,0,1652187936,"~/README.md"
 -'  24  0  ~/README.md
@@ -147,6 +186,10 @@
 |4,39,17,1,1652187813,"~/README.md"
 -'  17  1  ~/README.md
 |4,39,17,1,1652187813,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
 -'  12  0  ~/README.md
 |4,39,12,0,1652187805,"~/README.md"
 -'  12  0  ~/README.md
@@ -181,6 +224,8 @@
 |4,39,12,0,1652187742,"~/README.md"
 -'  12  0  ~/README.md
 |4,39,12,0,1652187742,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
 -'  1  1  ~/README.md
 |4,39,1,1,1652187696,"~/README.md"
 -'  1  1  ~/README.md
@@ -219,10 +264,10 @@
 # History of marks within files (newest to oldest):
 
 > ~/README.md
-	*	1652190634	0
-	"	159	0
-	^	159	0
-	.	161	63
+	*	1652190836	0
+	"	76	4
+	^	76	5
+	.	76	4
 	+	1	0
 	+	17	2
 	+	12	0
@@ -244,41 +289,46 @@
 	+	47	2
 	+	41	98
 	+	44	78
-	+	89	2
+	+	95	2
 	+	53	0
 	+	55	0
 	+	56	27
 	+	67	24
-	+	75	100
-	+	76	0
-	+	74	2
-	+	72	100
-	+	84	24
-	+	86	31
-	+	87	0
-	+	85	0
-	+	125	2
-	+	95	0
-	+	96	29
-	+	107	13
-	+	109	37
-	+	115	69
-	+	130	158
-	+	120	68
-	+	122	26
-	+	124	0
-	+	125	0
+	+	81	100
+	+	82	0
+	+	80	2
+	+	78	100
+	+	90	24
+	+	92	31
+	+	93	0
+	+	91	0
+	+	131	2
+	+	101	0
+	+	102	29
+	+	113	13
+	+	115	37
+	+	121	69
+	+	136	158
+	+	126	68
+	+	128	26
 	+	130	0
-	+	128	57
-	+	128	0
-	+	126	83
-	+	163	2
-	+	135	36
-	+	139	68
-	+	148	0
-	+	149	121
-	+	157	60
-	+	161	63
+	+	131	0
+	+	136	0
+	+	134	57
+	+	134	0
+	+	132	83
+	+	169	2
+	+	141	36
+	+	145	68
+	+	154	0
+	+	155	121
+	+	163	60
+	+	167	63
+	+	77	1
+	+	75	0
+	+	76	0
+	+	77	0
+	+	76	4
 
 > ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
 	*	1652189755	0

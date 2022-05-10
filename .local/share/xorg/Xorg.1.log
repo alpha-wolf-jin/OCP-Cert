@@ -292,3 +292,4 @@ X Protocol Version 11, Revision 0
 [   445.069] (II) This device may have been added with another device file.
 [   445.950] (II) modeset(0): Allocate new frame buffer 1600x900 stride
 [   445.961] (II) modeset(0): Disabling kernel dirty updates, not required.
+[  4080.617] (II) event4  - QEMU QEMU USB Tablet: Enabling spurious button debouncing, see https://wayland.freedesktop.org/libinput/doc/1.14.3/button-debouncing.html for details
