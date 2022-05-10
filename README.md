@@ -22,6 +22,11 @@ git add . ; git commit -a -m "update README" ; git push -u origin main
 -    Configure the master API to use the new certificate.
 -    Validate the new certificate by accessing the web console and by running the oc login command.
 
+**Important Things to Note**
+-    The new certificate and key in PEM format.
+-    The certificate must have a subjectAltName extension of *.apps.<OPENSHIFT-DOMAIN>, such as *.apps.ocp4.example.com, that enables using the certificate as a wildcard certificate for the .apps subdomain.
+-    Changing the certificate used by the ingress controller operator does not affect certificates signed by the internal OpenShift certificate authority.
+
 ## Inspect the new certificate to view its subject, issuer, dates, and subject alternate name
 
 ```
@@ -166,5 +171,14 @@ kube-apiserver-master03   5/5     Running   0          4m22s
 $ oc logout
 
 $ oc login -u admin -p redhat https://api.ocp4.example.com:6443
+
+```
+
+## edge route
+
+take advantage of the new wildcard certificate by creating an edge route. While an edge route only secures traffic between the router and the user, it does not require making any modifications to the application container image.
+
+```
+$ oc create route edge <ROUTE-NAME> --service <SERVICE>
 
 ```
