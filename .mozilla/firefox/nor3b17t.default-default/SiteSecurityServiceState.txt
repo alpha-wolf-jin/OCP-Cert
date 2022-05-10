@@ -38,6 +38,6 @@ www.google-analytics.com:HSTS	0	19122	1663076441831,1,1,2
 github.githubassets.com:HSTS	0	19122	1683705451599,1,0,2
 normandy.cdn.mozilla.net:HSTS	0	19122	1683726718638,1,0,2
 support.mozilla.org:HSTS	0	19122	1683726040447,1,0,2
-role.rhu.redhat.com:HSTS	0	19122	1683730704483,1,1,2
+role.rhu.redhat.com:HSTS	0	19122	1683731004520,1,1,2
 www.googletagmanager.com:HSTS	0	19122	1683726041634,1,1,2
 www.google.com^firstPartyDomain=google-b-e.search.suggestions.mozilla:HSTS	0	19122	1683705144445,1,0,2

@@ -291,7 +291,8 @@ data:
 ### Use the oc set volume command to mount the ca-certs configuration map into the hello1 deployment
 
 ```
-$ oc set volume deployment/hello1 -t configmap  --name trusted-ca --add --read-only=true --mount-path /etc/pki/ca-trust/extracted/pem --configmap-name ca-certs
+
+$ oc set volume deployment/hello1 -t configmap  --name trusted-ca --add --read-only=true --mount-path /etc/pki/tls/certs --configmap-name ca-certs 
 
 $ oc get deployment/hello1 -o yaml
 ...
@@ -300,7 +301,7 @@ $ oc get deployment/hello1 -o yaml
       containers:
 
         volumeMounts:
-        - mountPath: /etc/pki/ca-trust/extracted/pem
+        - mountPath: /etc/pki/tls/certs
           name: trusted-ca
           readOnly: true
 
@@ -315,22 +316,11 @@ NAME                      READY   STATUS    RESTARTS   AGE
 hello1-7646448745-gjdjz   1/1     Running   0          5m45s
 
 $ oc exec -it deployment/hello1 -- /bin/bash
-bash-4.4$ grep Classroom /etc/pki/ca-trust/extracted/pem/ca-bundle.crt
+bash-4.4$ grep Classroom /etc/pki/tls/certs/ca-bundle.crt
 # Classroom Wildcard & Master API Certificate
 # GLS Training Classroom Certificate Authority
 
-bash-4.4$ curl https://hello2-trust.apps.ocp4.example.com
-curl: (77) error setting certificate verify locations:
-  CAfile: /etc/pki/tls/certs/ca-bundle.crt
-  CApath: none
 
-$ oc set volume deployment/hello1 -t configmap  --name trusted-ca --add --read-only=true --mount-path /etc/pki/tls/certs --configmap-name ca-certs --overwrite
-
-[student@workstation certificates-enterprise-ca]$ oc get pod
-NAME                      READY   STATUS    RESTARTS   AGE
-hello1-6cf855b465-pcvfq   1/1     Running   0          22s
-hello2-7d6ff5574-dbsxz    1/1     Running   0          34m
-[student@workstation certificates-enterprise-ca]$ oc exec -it deployment/hello1 -- /bin/bash
 bash-4.4$ curl https://hello2-trust.apps.ocp4.example.com
 <html>
   <body>
