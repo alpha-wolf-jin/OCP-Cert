@@ -182,3 +182,160 @@ take advantage of the new wildcard certificate by creating an edge route. While 
 $ oc create route edge <ROUTE-NAME> --service <SERVICE>
 
 ```
+# Configuring Applications to Trust the Enterprise Certificate Authority
+
+**Purpose**
+-    Identify the configuration map used by the cluster proxy.
+-    Verify the certificates in the cluster proxy configuration map.
+-    Create a new configuration map that is injected with the trusted certificate bundle.
+-    Mount your configuration map inside a pod so that it trusts certificates signed by your enterprise CA.
+
+## configuration map used by the cluster proxy
+```
+$ oc get proxy/cluster -o yaml |tail -4
+spec:
+  trustedCA:
+    name: combined-certs
+status: {}
+
+$  oc get configmap combined-certs -n openshift-config -o jsonpath='{.data.*}' | grep Classroom
+# Classroom Wildcard & Master API Certificate  on top
+# GLS Training Classroom Certificate Authority on bottom
+
+```
+
+## Create the certificates-app-trust project with two applications named hello1 and hello2
+
+```
+$ oc new-project certificates-app-trust
+
+$ oc new-app --name hello1  --docker-image quay.io/redhattraining/hello-world-nginx:v1.0
+
+$ oc create route edge --service hello1 --hostname hello1-trust.apps.ocp4.example.com
+
+$ oc new-app --name hello2 --docker-image quay.io/redhattraining/hello-world-nginx:v1.0
+
+$ oc create route edge --service hello2 --hostname hello2-trust.apps.ocp4.example.com
+
+$ oc get routes
+NAME     HOST/PORT                            PATH   SERVICES   PORT       TERMINATION   WILDCARD
+hello1   hello1-trust.apps.ocp4.example.com          hello1     8080-tcp   edge          None
+hello2   hello2-trust.apps.ocp4.example.com          hello2     8080-tcp   edge          None
+
+$ curl https://hello1-trust.apps.ocp4.example.com
+<html>
+  <body>
+    <h1>Hello, world from nginx!</h1>
+  </body>
+</html>
+
+$ curl https://hello2-trust.apps.ocp4.example.com
+<html>
+  <body>
+    <h1>Hello, world from nginx!</h1>
+  </body>
+</html>
+
+
+
+```
+
+Connect to the hello1 application pod and attempt to access the route for the hello2 application. This attempt fails because the hello1 pods do not trust certificates signed by the enterprise CA.
+
+```
+$ oc get deployments
+NAME     READY   UP-TO-DATE   AVAILABLE   AGE
+hello1   1/1     1            1           7m2s
+hello2   1/1     1            1           5m27s
+
+$ oc exec -it deployment/hello1 -- /bin/bash
+bash-4.4$ curl https://hello2-trust.apps.ocp4.example.com
+curl: (60) SSL certificate problem: self signed certificate in certificate chain
+More details here: https://curl.haxx.se/docs/sslcerts.html
+
+bash-4.4$ exit:w
+
+```
+
+## Inject the trusted certificate bundle into a new ca-certs configuration map
+
+### Create the ca-certs configuration map
+```
+$ oc create configmap ca-certs
+
+```
+
+### Label the configuration map with config.openshift.io/inject-trusted-cabundle=true
+```
+$ oc label configmap ca-certs config.openshift.io/inject-trusted-cabundle=true
+
+```
+
+### Display the contents of the configuration map
+
+Although it was originally empty, the cluster network operator injected certificates into it. There are many certificates in the configuration map; the certificates from combined-certs were injected at the top.
+
+```
+$ oc get configmap ca-certs -o yaml | head -n 6
+apiVersion: v1
+data:
+  ca-bundle.crt: |
+    # Classroom Wildcard & Master API Certificate
+    -----BEGIN CERTIFICATE-----
+    MIIGEjCCA/qgAwIBAgIUHbAagJRT/So5GG5aFyEqrtVKloswDQYJKoZIhvcNAQEL
+
+```
+
+## Mount the ca-certs configuration map in the hello1 application pod
+
+### Use the oc set volume command to mount the ca-certs configuration map into the hello1 deployment
+
+```
+$ oc set volume deployment/hello1 -t configmap  --name trusted-ca --add --read-only=true --mount-path /etc/pki/ca-trust/extracted/pem --configmap-name ca-certs
+
+$ oc get deployment/hello1 -o yaml
+...
+
+    spec:
+      containers:
+
+        volumeMounts:
+        - mountPath: /etc/pki/ca-trust/extracted/pem
+          name: trusted-ca
+          readOnly: true
+
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: ca-certs
+        name: trusted-ca
+
+$ oc get pods -l deployment=hello1
+NAME                      READY   STATUS    RESTARTS   AGE
+hello1-7646448745-gjdjz   1/1     Running   0          5m45s
+
+$ oc exec -it deployment/hello1 -- /bin/bash
+bash-4.4$ grep Classroom /etc/pki/ca-trust/extracted/pem/ca-bundle.crt
+# Classroom Wildcard & Master API Certificate
+# GLS Training Classroom Certificate Authority
+
+bash-4.4$ curl https://hello2-trust.apps.ocp4.example.com
+curl: (77) error setting certificate verify locations:
+  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: none
+
+$ oc set volume deployment/hello1 -t configmap  --name trusted-ca --add --read-only=true --mount-path /etc/pki/tls/certs --configmap-name ca-certs --overwrite
+
+[student@workstation certificates-enterprise-ca]$ oc get pod
+NAME                      READY   STATUS    RESTARTS   AGE
+hello1-6cf855b465-pcvfq   1/1     Running   0          22s
+hello2-7d6ff5574-dbsxz    1/1     Running   0          34m
+[student@workstation certificates-enterprise-ca]$ oc exec -it deployment/hello1 -- /bin/bash
+bash-4.4$ curl https://hello2-trust.apps.ocp4.example.com
+<html>
+  <body>
+    <h1>Hello, world from nginx!</h1>
+  </body>
+</html>
+
+```
