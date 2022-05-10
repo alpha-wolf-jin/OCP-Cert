@@ -12,9 +12,9 @@
 ~H
 # Command Line History (newest to oldest):
 :wq
-|2,0,1652187894,,"wq"
+|2,0,1652190634,,"wq"
 :w
-|2,0,1652187845,,"w"
+|2,0,1652190549,,"w"
 
 # Search String History (newest to oldest):
 
@@ -25,39 +25,192 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-""1	LINE	0
-	-
-|3,1,1,1,1,0,1652187887,"-"
+"1	LINE	0
+	    https://console-openshift-console.apps.ocp4.example.com.
+|3,0,1,1,1,0,1652190193,"    https://console-openshift-console.apps.ocp4.example.com."
 "2	LINE	0
-	-
-|3,0,2,1,1,0,1652187885,"-"
+	
+|3,0,2,1,1,0,1652190122,""
 "3	LINE	0
 	
-|3,0,3,1,1,0,1652187876,""
+|3,0,3,1,1,0,1652188332,""
 "4	LINE	0
-	git push -u origin main
-|3,0,4,1,1,0,1652187730,"git push -u origin main"
-"-	CHAR	0
-	 
-|3,0,36,0,1,0,1652187882," "
+	       ...
+|3,0,4,1,1,0,1652188331,"       ..."
+"5	LINE	0
+	        Subject: C = US, ST = NC, L = Raleigh, O = "Red Hat, Inc.", OU = Training, CN = *.apps.ocp4.example.com
+|3,0,5,1,1,0,1652188330,"        Subject: C = US, ST = NC, L = Raleigh, O = \"Red Hat, Inc.\", OU = Training, CN = *.apps.ocp4.example.com"
+"6	LINE	0
+	            Not After : May  7 13:06:32 2032 GMT
+|3,0,6,1,1,0,1652188330,"            Not After : May  7 13:06:32 2032 GMT"
+"7	LINE	0
+	            Not Before: May 10 13:06:32 2022 GMT
+|3,0,7,1,1,0,1652188329,"            Not Before: May 10 13:06:32 2022 GMT"
+"8	LINE	0
+	        Validity
+|3,0,8,1,1,0,1652188329,"        Validity"
+"9	LINE	0
+	        Issuer: C = US, ST = NC, L = Raleigh, O = "Red Hat, Inc.", OU = Training, CN = GLS Training Classroom Certificate Authority
+|3,0,9,1,1,0,1652188329,"        Issuer: C = US, ST = NC, L = Raleigh, O = \"Red Hat, Inc.\", OU = Training, CN = GLS Training Classroom Certificate Authority"
+""-	CHAR	0
+	.
+|3,1,36,0,1,0,1652190202,"."
 
 # File marks:
-'0  24  0  ~/README.md
-|4,48,24,0,1652187894,"~/README.md"
-'1  12  0  ~/README.md
-|4,49,12,0,1652187742,"~/README.md"
-'2  12  0  ~/README.md
-|4,50,12,0,1652187742,"~/README.md"
+'0  159  0  ~/README.md
+|4,48,159,0,1652190634,"~/README.md"
+'1  10  26  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
+|4,49,10,26,1652189756,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
+'2  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,50,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+'3  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,51,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+'4  24  0  ~/README.md
+|4,52,24,0,1652187894,"~/README.md"
+'5  24  0  ~/README.md
+|4,53,24,0,1652187894,"~/README.md"
+'6  12  0  ~/README.md
+|4,54,12,0,1652187742,"~/README.md"
+'7  12  0  ~/README.md
+|4,55,12,0,1652187742,"~/README.md"
+'8  12  0  ~/README.md
+|4,56,12,0,1652187742,"~/README.md"
+'9  12  0  ~/README.md
+|4,57,12,0,1652187742,"~/README.md"
 
 # Jumplist (newest first):
+-'  159  0  ~/README.md
+|4,39,159,0,1652190634,"~/README.md"
+-'  130  82  ~/README.md
+|4,39,130,82,1652190148,"~/README.md"
+-'  10  26  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
+|4,39,10,26,1652189756,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
+|4,39,1,0,1652189692,"~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml"
+-'  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,39,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+-'  7  23  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,39,7,23,1652189398,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,39,1,0,1652189258,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+|4,39,1,0,1652189258,"~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml"
+-'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  11  23  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,11,23,1652188962,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  1  0  ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+|4,39,1,0,1652188864,"~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187936,"~/README.md"
 -'  24  0  ~/README.md
 |4,39,24,0,1652187894,"~/README.md"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187894,"~/README.md"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187894,"~/README.md"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187894,"~/README.md"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187894,"~/README.md"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187894,"~/README.md"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187894,"~/README.md"
+-'  24  0  ~/README.md
+|4,39,24,0,1652187894,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
 -'  17  1  ~/README.md
 |4,39,17,1,1652187813,"~/README.md"
 -'  12  0  ~/README.md
 |4,39,12,0,1652187805,"~/README.md"
 -'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
+-'  12  0  ~/README.md
 |4,39,12,0,1652187742,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187742,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187742,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187742,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187742,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187742,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187742,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187742,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
 -'  1  1  ~/README.md
 |4,39,1,1,1652187696,"~/README.md"
 -'  1  1  ~/README.md
@@ -66,10 +219,10 @@
 # History of marks within files (newest to oldest):
 
 > ~/README.md
-	*	1652187893	0
-	"	24	0
-	^	24	0
-	.	24	0
+	*	1652190634	0
+	"	159	0
+	^	159	0
+	.	161	63
 	+	1	0
 	+	17	2
 	+	12	0
@@ -83,3 +236,68 @@
 	+	22	0
 	+	23	0
 	+	24	0
+	+	18	9
+	+	3	12
+	+	36	2
+	+	36	9
+	+	36	0
+	+	47	2
+	+	41	98
+	+	44	78
+	+	89	2
+	+	53	0
+	+	55	0
+	+	56	27
+	+	67	24
+	+	75	100
+	+	76	0
+	+	74	2
+	+	72	100
+	+	84	24
+	+	86	31
+	+	87	0
+	+	85	0
+	+	125	2
+	+	95	0
+	+	96	29
+	+	107	13
+	+	109	37
+	+	115	69
+	+	130	158
+	+	120	68
+	+	122	26
+	+	124	0
+	+	125	0
+	+	130	0
+	+	128	57
+	+	128	0
+	+	126	83
+	+	163	2
+	+	135	36
+	+	139	68
+	+	148	0
+	+	149	121
+	+	157	60
+	+	161	63
+
+> ~/DO380/labs/certificates-enterprise-ca/ingresscontrollers.yaml
+	*	1652189755	0
+	"	10	26
+	^	10	27
+	.	10	26
+	+	10	26
+
+> ~/DO380/labs/certificates-enterprise-ca/proxy-cluster.yaml
+	*	1652189397	0
+	"	7	23
+	^	7	24
+	.	7	23
+	+	7	23
+
+> ~/DO380/labs/certificates-enterprise-ca/apiserver-cluster.yaml
+	*	1652188962	0
+	"	11	23
+	^	11	24
+	.	11	23
+	+	9	27
+	+	11	23
