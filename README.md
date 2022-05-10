@@ -15,3 +15,10 @@ git push -u origin main
 
 git add . ; git commit -a -m "update README" ; git push -u origin main
 ```
+** Purpose **
+
+-    Inspect a new certificate signed by the classroom certificate authority.
+-    Configure the ingress controller to use the new certificate.
+-    Configure the master API to use the new certificate.
+-    Validate the new certificate by accessing the web console and by running the oc login command.
+

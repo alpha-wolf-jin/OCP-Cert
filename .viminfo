@@ -12,9 +12,9 @@
 ~H
 # Command Line History (newest to oldest):
 :wq
-|2,0,1652187742,,"wq"
+|2,0,1652187894,,"wq"
 :w
-|2,0,1652187724,,"w"
+|2,0,1652187845,,"w"
 
 # Search String History (newest to oldest):
 
@@ -26,26 +26,60 @@
 
 # Registers:
 ""1	LINE	0
+	-
+|3,1,1,1,1,0,1652187887,"-"
+"2	LINE	0
+	-
+|3,0,2,1,1,0,1652187885,"-"
+"3	LINE	0
+	
+|3,0,3,1,1,0,1652187876,""
+"4	LINE	0
 	git push -u origin main
-|3,1,1,1,1,0,1652187730,"git push -u origin main"
+|3,0,4,1,1,0,1652187730,"git push -u origin main"
+"-	CHAR	0
+	 
+|3,0,36,0,1,0,1652187882," "
 
 # File marks:
-'0  12  0  ~/README.md
-|4,48,12,0,1652187742,"~/README.md"
+'0  24  0  ~/README.md
+|4,48,24,0,1652187894,"~/README.md"
+'1  12  0  ~/README.md
+|4,49,12,0,1652187742,"~/README.md"
+'2  12  0  ~/README.md
+|4,50,12,0,1652187742,"~/README.md"
 
 # Jumplist (newest first):
+-'  24  0  ~/README.md
+|4,39,24,0,1652187894,"~/README.md"
+-'  17  1  ~/README.md
+|4,39,17,1,1652187813,"~/README.md"
+-'  12  0  ~/README.md
+|4,39,12,0,1652187805,"~/README.md"
 -'  12  0  ~/README.md
 |4,39,12,0,1652187742,"~/README.md"
+-'  1  1  ~/README.md
+|4,39,1,1,1652187696,"~/README.md"
 -'  1  1  ~/README.md
 |4,39,1,1,1652187696,"~/README.md"
 
 # History of marks within files (newest to oldest):
 
 > ~/README.md
-	*	1652187733	0
-	"	12	0
-	^	17	3
-	.	12	0
+	*	1652187893	0
+	"	24	0
+	^	24	0
+	.	24	0
 	+	1	0
 	+	17	2
 	+	12	0
+	+	17	0
+	+	23	97
+	+	18	4
+	+	20	1
+	+	22	0
+	+	21	0
+	+	20	3
+	+	22	0
+	+	23	0
+	+	24	0
