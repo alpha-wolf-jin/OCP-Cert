@@ -71,6 +71,7 @@ spec:
 >Ensure that the configuration map uses a data key of ca-bundle.crt.
 **CN**
 - *.apps.ocp4.example.com
+
 **SAN**
 - *.apps.ocp4.example.com
 - api.ocp4.example.com
