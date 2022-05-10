@@ -1,0 +1,226 @@
+(window["webpackJsonpSharedChunkBundles"] = window["webpackJsonpSharedChunkBundles"] || []).push([["survey-dialog"],{
+
+/***/ "HHehmGEjQ1":
+/*!********************************************************!*\
+  !*** ./src/components/Course/SurveyDialog/styles.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "NnObJse21A":
+/*!*************************************************************!*\
+  !*** ./src/components/Course/SurveyDialog/SurveyDialog.jsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "LDoPTt+kJa");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mobx_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mobx-react */ "45nZ41lAal");
+/* harmony import */ var react_i18next__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-i18next */ "i4uII0gZh9");
+/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! query-string */ "w9ZgV/IbmH");
+/* harmony import */ var query_string__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(query_string__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "OWUu7vP5c9");
+/* harmony import */ var js_base64__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! js-base64 */ "9dfuwHMowf");
+/* harmony import */ var _stores__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../stores */ "xj1sfcUQ6l");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./store */ "lEerOPRdO3");
+/* harmony import */ var _views_Course_store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../views/Course/store */ "6xna5OBGRB");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./styles.scss */ "HHehmGEjQ1");
+/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_styles_scss__WEBPACK_IMPORTED_MODULE_9__);
+
+
+
+
+
+
+
+
+
+
+
+var SurveyDialog = function SurveyDialog() {
+  var courseStore = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_views_Course_store__WEBPACK_IMPORTED_MODULE_8__["courseContext"]);
+  var visibilityStore = Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["useLocalStore"])(function () {
+    return new _store__WEBPACK_IMPORTED_MODULE_7__["default"]();
+  });
+
+  var _useContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(_stores__WEBPACK_IMPORTED_MODULE_6__["storesContext"]),
+      configStore = _useContext.configStore,
+      userStore = _useContext.userStore;
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var _courseStore$userData, _courseStore$userData2;
+
+    // check for saved visibility settings
+    // eslint-disable-next-line camelcase
+    var savedVisibility = (_courseStore$userData = courseStore.userData) === null || _courseStore$userData === void 0 ? void 0 : (_courseStore$userData2 = _courseStore$userData.settings) === null || _courseStore$userData2 === void 0 ? void 0 : _courseStore$userData2.show_survey25;
+    visibilityStore.visible = savedVisibility !== false;
+  }, []);
+  var utoken = Object(js_base64__WEBPACK_IMPORTED_MODULE_5__["encode"])(userStore.username);
+
+  var _useTranslation = Object(react_i18next__WEBPACK_IMPORTED_MODULE_2__["useTranslation"])(),
+      t = _useTranslation.t;
+
+  var checkbox = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  var code = courseStore.courseCode;
+  var offeringId = courseStore.courseSlug && parseInt(courseStore.courseSlug.match(/\d+/g), 10);
+  var modality = courseStore.modality;
+  var COURSE_SURVEY_URL = configStore.config.COURSE_SURVEY_URL;
+
+  var surveyLink = function surveyLink() {
+    var params = {
+      course: code,
+      offering: offeringId,
+      modality: modality,
+      utoken: utoken
+    };
+
+    if (userStore.isRHUSubscriber) {
+      delete params.utoken;
+    }
+
+    return "".concat(COURSE_SURVEY_URL, "?").concat(query_string__WEBPACK_IMPORTED_MODULE_3___default.a.stringify(params));
+  };
+
+  var dismiss = function dismiss() {
+    visibilityStore.dismiss();
+
+    if (checkbox.current.checked) {
+      // save to enrollment
+      courseStore.saveEnrollmentUserData(null, {
+        show_survey25: false
+      });
+    }
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, visibilityStore.visible ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Alert"], {
+    bsStyle: "info",
+    id: "survey-dialog",
+    onDismiss: dismiss
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Glyphicon"], {
+    glyph: "flag"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, t('Tell us what you think!'))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, t('Congratulations on completing at least 25% of the course. We would appreciate feedback on your learning experience. Click below to fill out a brief survey.')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
+    className: "inline"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["FormGroup"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+    bsStyle: "primary",
+    alt: COURSE_SURVEY_URL,
+    href: surveyLink(),
+    target: "_blank",
+    className: "take-me"
+  }, t('Take me to the survey')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+    bsStyle: "default",
+    onClick: dismiss
+  }, t('Not right now'))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["FormGroup"], {
+    className: "opt-out inline"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "checkbox",
+    ref: checkbox,
+    id: "survey-opt-out"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+    htmlFor: "survey-opt-out"
+  }, t("Don't ask again"))))) : null);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(mobx_react__WEBPACK_IMPORTED_MODULE_1__["observer"])(SurveyDialog));
+
+/***/ }),
+
+/***/ "lEerOPRdO3":
+/*!*****************************************************!*\
+  !*** ./src/components/Course/SurveyDialog/store.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var mobx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mobx */ "e8iHs6mZXc");
+var _class, _descriptor, _temp;
+
+function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
+
+function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and set to use loose mode. ' + 'To use proposal-class-properties in spec mode with decorators, wait for ' + 'the next major version of decorators in stage 2.'); }
+
+
+var SurveyDialogStore = (_class = (_temp =
+/*#__PURE__*/
+function () {
+  function SurveyDialogStore() {
+    _classCallCheck(this, SurveyDialogStore);
+
+    _initializerDefineProperty(this, "_visible", _descriptor, this);
+  }
+
+  _createClass(SurveyDialogStore, [{
+    key: "dismiss",
+    value: function dismiss() {
+      this.visible = false;
+    }
+  }, {
+    key: "visible",
+    get: function get() {
+      return this._visible;
+    },
+    set: function set(value) {
+      this._visible = value;
+    }
+  }]);
+
+  return SurveyDialogStore;
+}(), _temp), (_descriptor = _applyDecoratedDescriptor(_class.prototype, "_visible", [mobx__WEBPACK_IMPORTED_MODULE_0__["observable"]], {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  initializer: function initializer() {
+    return true;
+  }
+}), _applyDecoratedDescriptor(_class.prototype, "visible", [mobx__WEBPACK_IMPORTED_MODULE_0__["computed"]], Object.getOwnPropertyDescriptor(_class.prototype, "visible"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "dismiss", [mobx__WEBPACK_IMPORTED_MODULE_0__["action"]], Object.getOwnPropertyDescriptor(_class.prototype, "dismiss"), _class.prototype)), _class);
+/* harmony default export */ __webpack_exports__["default"] = (SurveyDialogStore);
+
+/***/ })
+
+}]);
+//# sourceMappingURL=survey-dialog.bundle.79288cb607e4e3b97775.js.map¢›#Í¨¾      bz`3bz`3DCRˆb{à¨   U    :https://role.rhu.redhat.com/rol-rhu/app/survey-dialog.bundle.79288cb607e4e3b97775.js necko:classified 1 strongly-framed 1 security-info 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 request-method GET response-head HTTP/2.0 200 OK
+server: nginx
+date: Tue, 10 May 2022 07:51:12 GMT
+content-type: application/javascript
+content-length: 10973
+last-modified: Tue, 26 Apr 2022 20:08:23 GMT
+etag: "62685137-2add"
+accept-ranges: bytes
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+strict-transport-security: max-age=31536000; includeSubDomains
+x-xss-protection: 1; mode=block
+content-security-policy: base-uri 'self';
+timing-allow-origin: *
+X-Firefox-Spdy: h2
+ original-response-headers server: nginx
+date: Tue, 10 May 2022 07:51:12 GMT
+content-type: application/javascript
+content-length: 10973
+last-modified: Tue, 26 Apr 2022 20:08:23 GMT
+etag: "62685137-2add"
+accept-ranges: bytes
+x-frame-options: SAMEORIGIN
+x-content-type-options: nosniff
+strict-transport-security: max-age=31536000; includeSubDomains
+x-xss-protection: 1; mode=block
+content-security-policy: base-uri 'self';
+timing-allow-origin: *
+X-Firefox-Spdy: h2
+ ctid 2 eTLD1Access 1;0;3423907821, uncompressed-len 0 net-response-time-onstart 34 net-response-time-onstop 34   *Ý
