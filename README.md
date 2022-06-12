@@ -83,8 +83,12 @@ spec:
  
 >Modify the cluster proxy so that it adds the new configuration map to the trusted certificate bundle
 
+> Proxy Cert should includes all intermediate and root CA info
+> cat intermediate-01.pem root-CA-01 intermediate-02.pem root-CA-02 root-CA-03 > proxy-certs.pem
+    
 ```
-$ oc create configmap combined-certs --from-file ca-bundle.crt=combined-cert.pem -n openshift-config
+
+$ oc create configmap proxy-certs --from-file ca-bundle.crt=proxy-certs.pem -n openshift-config
 
 $ vim proxy-cluster.yaml
 apiVersion: config.openshift.io/v1
@@ -93,7 +97,7 @@ metadata:
   name: cluster
 spec:
   trustedCA:
-    name: combined-certs
+    name: proxy-certs
 
 $ oc apply -f proxy-cluster.yaml
 
