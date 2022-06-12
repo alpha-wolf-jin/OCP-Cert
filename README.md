@@ -84,6 +84,7 @@ spec:
 >Modify the cluster proxy so that it adds the new configuration map to the trusted certificate bundle
 
 > Proxy Cert should includes all intermediate and root CA info
+
 > cat intermediate-01.pem root-CA-01 intermediate-02.pem root-CA-02 root-CA-03 > proxy-certs.pem
     
 ```
